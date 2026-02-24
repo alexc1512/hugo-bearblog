@@ -1,12 +1,12 @@
 <style>
   :root {
-    --width: 720px;
+    --width: 650px;
     --font-main: 'EB Garamond', serif;
     --font-secondary: 'EB Garamond', serif;
-    --font-scale: 1.1em;
-    --background-color: #FAFAF8;
+    --font-scale: 1.2em;
+    --background-color: #F7F4EF;
     --heading-color: #1a1a1a;
-    --text-color: #1a1a1a;
+    --text-color: #2a2a2a;
     --link-color: #4A6580;
     --visited-color: #7A90A0;
     --blockquote-color: #444;
@@ -33,9 +33,9 @@
   }
 
   [data-theme="light"] {
-    --background-color: #FAFAF8;
+    --background-color: #F7F4EF;
     --heading-color: #1a1a1a;
-    --text-color: #1a1a1a;
+    --text-color: #2a2a2a;
     --link-color: #4A6580;
     --visited-color: #7A90A0;
     --blockquote-color: #444;
@@ -49,13 +49,13 @@
     font-family: var(--font-secondary);
     font-size: var(--font-scale);
     margin: auto;
-    padding: 20px;
+    padding: 10px 20px;
     max-width: var(--width);
     text-align: left;
     background-color: var(--background-color);
     word-wrap: break-word;
     overflow-wrap: break-word;
-    line-height: 1.5;
+    line-height: 1.8;
     color: var(--text-color);
     min-height: 100vh;
     display: flex;
@@ -70,6 +70,8 @@
   h6 {
     font-family: var(--font-main);
     color: var(--heading-color);
+    line-height: 1.2;
+    margin-bottom: 0.3em;
   }
 
   a {
@@ -102,10 +104,20 @@
     font-size: 1em;
   }
 
-  main {
-    line-height: 1.6;
-    flex: 1;
+  header {
+    margin-bottom: 0.2em;
   }
+
+  main {
+    line-height: 1.8;
+    flex: 1;
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  main > *:first-child {
+    margin-block-start: 0;
+  } 
 
   table {
     width: 100%;
@@ -142,8 +154,11 @@
     text-decoration: none;
   }
 
-  .title h1 {
-    font-size: 1.5em;
+  .title h2 {
+    font-size: 1em;
+    font-weight: normal;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
   }
 
   .inline {
@@ -162,16 +177,19 @@
   ul.blog-posts {
     list-style-type: none;
     padding: unset;
+    margin-top: 0;
   }
 
   ul.blog-posts li {
     display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
   }
 
   ul.blog-posts li span {
     flex: 0 0 130px;
+    text-align: right;
   }
-
   ul.blog-posts li a:visited {
     color: var(--visited-color);
   }
